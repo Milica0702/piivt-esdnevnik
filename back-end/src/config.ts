@@ -1,4 +1,7 @@
 import IConfig from './common/IConfig.interface';
+import SubjectRouter from './components/subject/SubjectRouter.router';
+
+
 
 const DevConfig: IConfig = {
     server: {
@@ -29,7 +32,7 @@ const DevConfig: IConfig = {
         supportBigNumbers: true,
     },
     routers: [
-   
+        new SubjectRouter(),
     ]
 }
 export { DevConfig };
