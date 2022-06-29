@@ -1,5 +1,7 @@
 import IConfig from './common/IConfig.interface';
 import SubjectRouter from './components/subject/SubjectRouter.router';
+import ProfessorRouter from './components/professor/ProfessorRouter.router';
+import StudentRouter from './components/student/StudentRouter.router';
 
 
 
@@ -33,6 +35,8 @@ const DevConfig: IConfig = {
     },
     routers: [
         new SubjectRouter(),
+        new ProfessorRouter(),
+        new StudentRouter()
     ]
 }
 export { DevConfig };

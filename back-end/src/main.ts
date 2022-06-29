@@ -5,6 +5,8 @@ import { DevConfig } from "./config";
 import * as mysql2 from 'mysql2/promise';
 import IAppResource from "./common/IAppResources.interface";
 import SubjectService from "./components/subject/SubjectService.service";
+import ProfessorService from "./components/professor/ProfessorService.service";
+import StudentService from "./components/student/StudentService.service";
 
 
 async function main(){
@@ -25,10 +27,14 @@ async function main(){
             databaseConnection: db,
             services: {
                 subject: null,
+                professor: null,
+                student: null
 
             }
             };
         appResources.services.subject = new SubjectService(appResources);
+        appResources.services.professor = new ProfessorService(appResources);
+        appResources.services.student = new StudentService(appResources);
     app.use(cors());
 
     for (const router of config.routers){
