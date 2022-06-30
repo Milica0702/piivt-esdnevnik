@@ -2,10 +2,11 @@ import IAdapterOptions from '../../common/IAdapterOptions.interface';
 import BaseService from '../../common/BaseService';
 import ProfessorModel from './ProfessorModel.model';
 interface IProfessorAdapterOptions extends IAdapterOptions {
+    loadSubjects: boolean;
 
 }
 const DefaultProfessorAdapterOptions: IProfessorAdapterOptions = {
-
+    loadSubjects:false,
 }
 class ProfessorService extends BaseService<ProfessorModel, IProfessorAdapterOptions>{
     tableName(): string {
@@ -17,6 +18,7 @@ class ProfessorService extends BaseService<ProfessorModel, IProfessorAdapterOpti
         professor.name = data?.name;
         professor.surname = data?.surname;
         professor.username = data?.username;
+        professor.subjectId = Number(data?.subject_id);
         
         return professor;
     }

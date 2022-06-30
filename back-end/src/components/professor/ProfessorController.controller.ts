@@ -14,7 +14,7 @@ class ProfessorController extends BaseController{
     }
     async getById(req:Request, res: Response){
         const id: number = Number(req.params?.id);
-        this.service.professor.baseGetById(id, {loadGames:true})
+        this.service.professor.baseGetById(id, {loadSubjects:true})
             .then((result) => {
                 if(result === null){
                    throw {

@@ -19,6 +19,7 @@ class SubjectService extends BaseService<SubjectModel, ISubjectAdapterOptions>{
         return subject;
     }
 
+   
 }
 export default SubjectService;
 export {DefaultSubjectAdapterOptions, ISubjectAdapterOptions}

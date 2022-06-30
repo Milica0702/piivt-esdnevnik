@@ -114,6 +114,8 @@ abstract class BaseService<ReturnModel extends IModel, AdapterOptions extends IA
                 });
         });
     }
+
+  
     
 }
 export default BaseService;
