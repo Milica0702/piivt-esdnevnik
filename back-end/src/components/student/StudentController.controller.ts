@@ -14,7 +14,7 @@ class StudentController extends BaseController{
     }
     async getById(req:Request, res: Response){
         const id: number = Number(req.params?.id);
-        this.service.student.baseGetById(id, {loadGames:true})
+        this.service.student.baseGetById(id, {loadStudentSubjects:true})
             .then((result) => {
                 if(result === null){
                    throw {

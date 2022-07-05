@@ -8,7 +8,7 @@ class ProfessorModel implements IModel{
     surname: string;
     username: string;
     subjectId: number;
-    
+    passwordHash:string;  
   
 }
 export default ProfessorModel;

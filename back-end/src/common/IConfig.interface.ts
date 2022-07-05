@@ -1,3 +1,4 @@
+import { Algorithm } from 'jsonwebtoken';
 import IRouter from './IRouter.interface';
 interface IConfig{
     server: {
@@ -28,5 +29,31 @@ interface IConfig{
         supportBigNumbers: boolean,
     },
     routers: IRouter[],
+    auth: {
+        student: IAuthTokenOptions,
+        professor: IAuthTokenOptions,
+        allowAllRoutesWithoutAuthTokens: boolean,
+    },
+    
+
+
+
 }
+
+export interface IAuthTokenOptions {
+    issuer: string,
+    algorithm: Algorithm,
+    tokens: {
+        auth: ITokenProperties,
+        refresh: ITokenProperties,
+    },
+}
+export interface ITokenProperties {
+    duration: number,
+    keys: {
+        public: string,
+        private: string,
+    },
+}
+
 export default IConfig;
