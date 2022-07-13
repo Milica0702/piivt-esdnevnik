@@ -82,7 +82,7 @@ const DevConfig: IConfig = {
                 },
             },
         },
-        allowAllRoutesWithoutAuthTokens: false, // Samo dok traje razvoj front-end dela bez mogucnosti prijave
+        allowAllRoutesWithoutAuthTokens: true, // Samo dok traje razvoj front-end dela bez mogucnosti prijave
     }
 }
 export { DevConfig };
